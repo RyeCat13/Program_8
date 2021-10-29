@@ -1,4 +1,6 @@
-def mean(a):
+'''Rye Ledford - Computer Science Lab - Program 8'''
+
+def mean(a):                        #the mean, need the sum of test scores/amount
     if(len(a) == 0):
         return 0
     else:
@@ -7,13 +9,13 @@ def mean(a):
             sum += i
         return sum/len(a)
 
-def sd(mean, a):
+def sd(mean, a):                   #standard deviation, equation in assignment
     sqrt_add = 0.0
     for i in a:
         sqrt_add += (i - mean) ** 2
     return (sqrt_add/len(a))**0.5
 
-def display(test, assign):
+def display(test, assign):       #to display scores, fill function for call back
     tests = len(test)
     assigns = len(assign)
     weight = 0.0
@@ -65,9 +67,9 @@ def main():
         print()
         user_input = input("===> ")
 
-        if (user_input == '1'):
+        if (user_input == '1'):          # user input 
             print()
-            ar = float(input("Enter the new Test score 0-100 ===> "))
+            ar = float(input("Enter the new Test score 0-100 ===> ")) #user_add or user_remove
             while (ar < 0):
                 ar = float(input("Enter the new Test score 0-100 ===> "))
             scores.append(ar)
@@ -98,16 +100,16 @@ def main():
                     assign_scores.remove(ar)
                     cleared = True
             if(cleared == False):
-                print("could not find that score to remove")
+                print("could not find that score to remove")     #DNE
         elif (user_input == '6'):
             assign_scores.clear()
         elif(user_input == 'D' or user_input == 'd'):
-            display(scores, assign_scores)
+            display(scores, assign_scores)           #call back
 
         elif(user_input == 'Q' or user_input == 'q'):
             break
         else:
             print("Please choose a valid option.")
 
-main()
+main()    
             
